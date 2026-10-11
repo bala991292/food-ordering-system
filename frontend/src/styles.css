@@ -1,0 +1,92 @@
+:root {
+  --bg: #eef2ef;
+  --surface: #ffffff;
+  --ink: #16231d;
+  --muted: #5d6b64;
+  --line: #d9e1dc;
+  --chili: #c8382b;
+  --chili-dark: #a52c21;
+  --basil: #2f6b4f;
+  --saffron: #f2b33d;
+  --radius: 10px;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Figtree", system-ui, sans-serif; line-height: 1.5; }
+h1, h2, h3, .brand { font-family: "Bricolage Grotesque", "Figtree", sans-serif; letter-spacing: -0.01em; }
+h1 { font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 800; margin: 0 0 .75rem; }
+h2 { font-size: 1.5rem; margin: 0 0 1rem; }
+h3 { margin: 0 0 .25rem; font-size: 1.1rem; }
+a { color: var(--basil); }
+.muted { color: var(--muted); }
+.small { font-size: .88rem; }
+.page { max-width: 1080px; margin: 0 auto; padding: 1.5rem 1rem 4rem; }
+
+.nav { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; padding: .75rem 1.25rem; background: var(--surface); border-bottom: 3px solid var(--saffron); position: sticky; top: 0; z-index: 10; }
+.brand { font-weight: 800; font-size: 1.4rem; color: var(--chili); text-decoration: none; }
+.nav nav { display: flex; gap: 1.1rem; flex: 1; flex-wrap: wrap; }
+.nav nav a { color: var(--ink); text-decoration: none; padding: .25rem 0; border-bottom: 2px solid transparent; }
+.nav nav a.active { border-bottom-color: var(--chili); font-weight: 600; }
+.nav-user { display: flex; align-items: center; gap: .5rem; }
+.badge { background: var(--chili); color: #fff; border-radius: 99px; font-size: .75rem; padding: 0 .45rem; margin-left: .35rem; }
+
+.btn { display: inline-block; background: var(--chili); color: #fff; border: 0; border-radius: 8px; padding: .55rem 1rem; font: inherit; font-weight: 600; cursor: pointer; text-decoration: none; }
+.btn:hover { background: var(--chili-dark); }
+.btn:disabled { opacity: .6; cursor: wait; }
+.btn.ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+.btn.ghost:hover { background: var(--bg); }
+.btn.wide { width: 100%; margin-top: .5rem; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid var(--saffron); outline-offset: 2px; }
+
+.hero { padding: 1rem 0 .5rem; }
+.search { width: 100%; max-width: 420px; }
+input, select, textarea { font: inherit; padding: .55rem .7rem; border: 1px solid var(--line); border-radius: 8px; background: #fff; width: 100%; }
+label { display: block; font-weight: 600; font-size: .9rem; margin-bottom: .8rem; }
+label input, label select, label textarea { margin-top: .25rem; font-weight: 400; }
+label.inline { display: flex; align-items: center; gap: .5rem; }
+label.inline input { width: auto; margin: 0; }
+label.inline select { width: auto; margin: 0; }
+
+.chips { display: flex; gap: .5rem; flex-wrap: wrap; margin: .5rem 0 1.25rem; }
+.chip { border: 1px solid var(--line); background: var(--surface); border-radius: 99px; padding: .3rem .9rem; font: inherit; cursor: pointer; }
+.chip.on { background: var(--basil); border-color: var(--basil); color: #fff; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; }
+.card { background: var(--surface); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); display: flex; flex-direction: column; }
+.card.off { opacity: .6; }
+.card img, .ph { width: 100%; height: 150px; object-fit: cover; }
+.ph { display: grid; place-items: center; background: var(--saffron); color: var(--ink); font-family: "Bricolage Grotesque"; font-size: 3rem; font-weight: 800; }
+.card-body { padding: .9rem; display: flex; flex-direction: column; gap: .5rem; flex: 1; }
+.card-body p { margin: 0; flex: 1; }
+.row { display: flex; align-items: center; justify-content: space-between; gap: .75rem; flex-wrap: wrap; }
+
+.two-col { display: grid; grid-template-columns: 1.4fr 1fr; gap: 1.5rem; align-items: start; margin-bottom: 1.5rem; }
+@media (max-width: 760px) { .two-col { grid-template-columns: 1fr; } }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.25rem; }
+.panel.narrow { max-width: 420px; margin: 1.5rem auto; }
+
+.line { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .8rem 0; border-bottom: 1px solid var(--line); }
+.line > :first-child { flex: 1; }
+.line.total { font-size: 1.15rem; border-bottom: 0; }
+.qty { display: flex; align-items: center; gap: .6rem; }
+.qty button { width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--line); background: var(--surface); font-size: 1.1rem; cursor: pointer; }
+.empty { text-align: center; padding: 3rem 1rem; }
+
+.order { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1rem 1.25rem; margin-bottom: .9rem; }
+.order ul { margin: .5rem 0; padding-left: 1.2rem; }
+.pill { padding: .15rem .7rem; border-radius: 99px; font-size: .82rem; font-weight: 600; background: var(--line); }
+.pill.placed { background: #fde9c0; }
+.pill.preparing { background: #fcd5cf; }
+.pill.out_for_delivery { background: #cfe4f7; }
+.pill.delivered { background: #cfe8d9; color: var(--basil); }
+.pill.cancelled { background: #e3e3e3; color: #555; }
+
+.table { width: 100%; border-collapse: collapse; background: var(--surface); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); }
+.table th, .table td { text-align: left; padding: .65rem .85rem; border-bottom: 1px solid var(--line); }
+.table .actions { text-align: right; white-space: nowrap; }
+.link { background: none; border: 0; color: var(--basil); font: inherit; cursor: pointer; text-decoration: underline; padding: 0 .35rem; }
+.link.danger { color: var(--chili); }
+
+.error { background: #fdecea; color: #8a1f17; padding: .6rem .8rem; border-radius: 8px; }
+.ok { background: #e3f3ea; color: #1f5a3d; padding: .6rem .8rem; border-radius: 8px; }
+@media (max-width: 640px) { .table th:nth-child(2), .table td:nth-child(2) { display: none; } }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
